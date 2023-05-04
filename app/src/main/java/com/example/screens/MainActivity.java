@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button knapp;
+    String message = "Hello";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
