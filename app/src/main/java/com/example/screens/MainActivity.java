@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button knapp;
+    private Intent Edda;
     String message = "Hello";
 
     @Override
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                     startActivity(new Intent(MainActivity.this,SecondActivity.class));
-
+                    Edda.putExtra("name", "Petrik");
+                    Edda.putExtra("number", 22);
             }
         });
 

@@ -8,6 +8,8 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     String name;
+
+    int number;
     private TextView Textviewextra;
 
     @Override
@@ -18,6 +20,7 @@ public class SecondActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             name = extras.getString("name");
+            number = extras.getInt("number");
             Textviewextra = findViewById(R.id.textView2);
             Textviewextra.setText(name);
         }
