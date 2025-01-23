@@ -1,5 +1,4 @@
 
-# Rapport
 
 Först skapade jag en ny activity, efter detta så lade jag till en button i min layout. Denna knappen
 kopplades då så att den öppnade den andra activityn. Sedan gjorde jag en string och en int som innehöll
