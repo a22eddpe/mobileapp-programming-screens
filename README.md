@@ -1,42 +1,35 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Först skapade jag en ny activity, efter detta så lade jag till en button i min layout. Denna knappen
+kopplades då så att den öppnade den andra activityn. Sedan gjorde jag en string och en int som innehöll
+datan som skickas med när man trycker på knappen. )
 
-_Du kan ta bort all text som finns sedan tidigare_.
 
-## Följande grundsyn gäller dugga-svar:
+    knapp.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+    startActivity(new Intent(MainActivity.this, SecondActivity.class));
+    Edda = new Intent(MainActivity.this, SecondActivity.class);
+    Edda.putExtra("name", "Petrik"); // Optional
+    Edda.putExtra("number",  22 ); // Optional
+    startActivity(Edda);
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
+    }});
+Det som syns på koden ovan är koden för vad som ska skickas från MainActivity till SecondActivity.
+När man klickar på knappen skickas detta och startar den nya activityn.
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
-```
+Efter detta gjorde jag en textView som skulle visa denna datan på den andra sidan.
 
-Bilder läggs i samma mapp som markdown-filen.
+    Bundle extras = getIntent().getExtras();
+    if (extras != null) {
+    name = extras.getString("name");
+    number = extras.getInt("number");
+    textview =findViewById(R.id.textView2);
+    textview.setText(Namn+Nummer);
 
-![](android.png)
-
-Läs gärna:
-
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+Koden ovan, tagen från SecondActivity visar hur textviewn som visar datan från
+MainActivity är uppsatt. 
+![img.png](img.png)
+![img_1.png](img_1.png)
